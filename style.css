@@ -1,0 +1,269 @@
+:root {
+    --main-color: rgb(4, 143, 97);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    cursor: default;
+}
+
+body {
+    background-image: linear-gradient(to top, black, rgb(78, 77, 77));
+}
+
+img {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 1.5rem;
+}
+
+#navbar {
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    background-color: rgb(6, 212, 143);
+    align-items: center;
+    display: relative;
+}
+
+#navbar > div, a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#logo {
+    width: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-links {
+    width: 100px;
+    text-decoration: none;
+    color: black;
+    transition-property: all;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.navbar-links:hover {
+    background-color: rgb(5, 155, 105);
+}
+
+#bottom {
+    background-color: rgba(0, 0, 0, 0);
+    grid-area: bottom;
+    height: 17vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+#bottom-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 100%;
+}
+
+#slidebar {
+    opacity: inherit;
+    cursor: pointer;
+    width: 80%;
+    transition-property: all;
+    transition-delay: 0.2s;
+    transition-duration: 0.3s;
+}
+
+#bottom-top {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 50%;
+}
+
+#seeker {
+    flex-basis: 1;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transition-property: all;
+    transition-delay: 0.2s;
+    transition-duration: 0.3s;
+}
+
+#title {
+    width: 30%;
+    height: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.time {
+    opacity: inherit;
+    height: 24px;
+    width: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-property: all;
+    transition-delay: 0.2s;
+    transition-duration: 0.3s;
+}
+
+#main {
+    grid-area: main;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75vh;
+    width: 100%;
+}
+
+#display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    width: 80%;
+}
+
+#background {
+    height: 100%;
+    width: 90%;
+    background: url('songs/Tesseract__April/image.jpg') no-repeat center center/cover;
+    border-radius: 10px;
+    filter: blur(1px);
+}
+
+#songlist {
+    /* background-color: var(--main-color); */
+    height: 75vh;
+    width: 25%;
+    /* box-shadow: -5px 0px 20px rgb(2, 147, 99); */
+    overflow-y: scroll;
+    background-image: linear-gradient(to bottom, rgb(2, 91, 61), black);
+}
+
+#flexsongs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.songs {
+    height: 70px;
+    width: 100%;
+    border-bottom: 0.5px solid black;
+    border-top: 0.5px solid black;
+    /* background-color: var(--main-color); */
+    background-color: rgba(253, 252, 252, 0);
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 0.4s;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#first {
+    border-top: 1px solid black;
+}
+
+#last {
+    border-top: 1px solid black;
+}
+
+.songName {
+    width: 50%;
+    pointer-events: none;
+}
+
+.songImage {
+    height: 70%;
+    width: 80px;
+    border-radius: 0px;
+    pointer-events: none;
+}
+
+.timestamp {
+    pointer-events: none;
+}
+
+.window {
+    color: white;
+}
+
+#container {
+    display: grid;
+    grid-template-areas: 
+    'main'
+    'main'
+    'main'
+    'bottom';
+}
+
+#options {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mask {
+    position: relative;
+    left: 5px;
+    top: 4px;
+    float: left;
+    height: 23px;
+    width: 5px;
+    background-color: black;
+    box-shadow: -3px 0px 5px rgb(249, 246, 246);
+    z-index: -1;
+}
+
+.button i {
+    cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+    #main {
+        flex-direction: column;
+    }
+    #songlist {
+        width: 100%;
+        height: 50%;
+    }
+}
+
+@media (max-width: 300px) {
+    #bottom {
+        flex-direction: column;
+    }
+
+    #title {
+        margin-top: 25px;
+        margin-left: 0px;
+    }
+}
