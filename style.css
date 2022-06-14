@@ -61,7 +61,7 @@ img {
 #bottom {
     background-color: rgba(0, 0, 0, 0);
     grid-area: bottom;
-    height: 16vh;
+    height: 16.4vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
