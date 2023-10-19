@@ -12,9 +12,16 @@ let songbox = document.getElementById('flexsongs');
 slidebar.value = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
+    string internal = "";
     for(var i = 0; i < 10; i++) {
-        string internal = 
+        string internal += `<div class="songs">
+                        <img src="" alt="" class = "songImage">
+                        <div class = "songName"></div>
+                        <div class = "timestamp"></div>
+                    </div>`
     }
+    songbox.innerHTML = internal;
+    updateSongs();
 });
 
 class SongItems {
@@ -95,22 +102,24 @@ let songArr = [song1, song2, song3];
 
 changeDisplayColor();
 
-itemArr.forEach((element, i) => {
-    let image = element.querySelector('img');
-    let list = element.getElementsByTagName('div');
-    try {
-        image.src = songArr[i].imageURL;
-        list[0].innerHTML = songArr[i].name + ' - ' + songArr[i].artist;
-        list[1].innerHTML = songArr[i].timestamp;
-        
-    }
-    catch {
-        itemArr[i].style.display = 'none';
-    }
-    element.addEventListener('click', () => {
-        setSong(i);
+function updateSongs() {
+    itemArr.forEach((element, i) => {
+        let image = element.querySelector('img');
+        let list = element.getElementsByTagName('div');
+        try {
+            image.src = songArr[i].imageURL;
+            list[0].innerHTML = songArr[i].name + ' - ' + songArr[i].artist;
+            list[1].innerHTML = songArr[i].timestamp;
+            
+        }
+        catch {
+            itemArr[i].style.display = 'none';
+        }
+        element.addEventListener('click', () => {
+            setSong(i);
+        });
     });
-});
+}
 
 function updateSlider() {
     let progress = (audio.currentTime / audio.duration) * 1000;
