@@ -7,16 +7,14 @@ let seeker = document.getElementById('seeker');
 let background = document.getElementById('background');
 let body = document.querySelector('body');
 let playingIndex = 0;
-let songbox = document.getElementById('');
+let songbox = document.getElementById('flexsongs');
 
 slidebar.value = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
-    let btn = document.getElementById('btn');
-    btn.addEventListener('click', () => {
-        // handle the click event
-        console.log('clicked');
-    });
+    for(var i = 0; i < 10; i++) {
+        string internal = 
+    }
 });
 
 class SongItems {
